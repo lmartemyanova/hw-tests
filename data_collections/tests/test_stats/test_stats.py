@@ -17,3 +17,14 @@ def get_test_data(path):
 def test_get_max_stats(test_data, expected):
     result = get_max_stats(test_data)
     assert result == expected
+
+
+@pytest.mark.parametrize('expected_exception, test_data',
+                         [(TypeError, {
+                             "facebook": 55,
+                             "yandex": "284",
+                             "vk": 115
+                         })])
+def test_get_max_stats_with_error(test_data, expected_exception):
+    with pytest.raises(expected_exception):
+        get_max_stats(test_data)

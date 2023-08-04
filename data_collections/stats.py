@@ -13,4 +13,5 @@ if __name__ == '__main__':
     filepath = os.path.join(os.getcwd(), 'database', 'stats.json')
     with open(filepath, 'r', encoding='utf-8') as f:
         stats = json.load(f)
-    print(get_max_stats(stats))
+        for i in stats:
+            print(get_max_stats(i))
