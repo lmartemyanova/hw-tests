@@ -12,7 +12,7 @@ def get_test_data(path):
 
 @pytest.mark.parametrize('test_data, expected',
                          zip(get_test_data('database/courses_info.json'),
-                             get_test_data('tests/expected_results/courses.json')))
+                             get_test_data('tests/expected_results/names_expected.json')))
 def test_find_same_names(test_data, expected):
     result = find_same_names(test_data)
     assert result == expected
